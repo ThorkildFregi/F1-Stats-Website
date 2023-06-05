@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" class="uk-background-secondary">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/css/uikit.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit-icons.min.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    </head>
+    <body>
+        <div class="uk-container uk-align-center uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
+            <div>
+                <h1 class="uk-text-center uk-light">Choose Event</h1>
+                <br>
+                <form action="{{ url_for('graphicsChoose') }}" method="post" class="form_inline" enctype='multipart/form-data'>
+                    <input type="hidden" id="year" name="year" value="{{ year }}"/>
+                    <div class=" uk-container uk-align-center uk-flex uk-flex-center uk-flex-middle">
+                        <div class="uk-light">
+                            <select class="uk-select" aria-label="Select" id="round" name="round">
+                                {% for event in countryList %}
+                                    <option value="{{ event }}">{{ event }}</option>
+                                {% endfor %}
+                            </select>
+                            <br>
+                            <br>
+                            <select class="uk-select" aria-label="Select" id="session" name="session">
+                                <option value="FP1">Free Practice 1</option>
+                                <option value="FP2">Free Practice 2</option>
+                                <option value="FP3">Free Practice 3</option>
+                                <option value="Q">Qualification</option>
+                                <option value="R">Race</option>
+                            </select>
+                            <br>
+                            <br>
+                            <button class="uk-button uk-button-default uk-light">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

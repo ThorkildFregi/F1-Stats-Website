@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="uk-background-secondary">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/css/uikit.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit-icons.min.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    </head>
+    <body>
+        <div class="uk-container uk-align-center uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
+            <div>
+                <h1 class="uk-text-center uk-light">Choose Graphic</h1>
+                <br>
+                <form action="{{ url_for('result') }}" method="post" class="form_inline" enctype='multipart/form-data'>
+                    <input type="hidden" id="year" name="year" value="{{ year }}"/>
+                    <input type="hidden" id="round" name="round" value="{{ event }}"/>
+                    <input type="hidden" id="session" name="session" value="{{ ses }}"/>
+                    <div class=" uk-container uk-align-center uk-flex uk-flex-center uk-flex-middle">
+                        <div class="uk-light">
+                            <select class="uk-select" aria-label="Select" id="graphics" name="graphics">
+                                <option value="sOnD">Speed on Distance for Fastest Lap</option>
+                                <option value="dOnT">Distance on Time for Fastest Lap</option>
+                                <option value="sOnT">Speed on Time for Fastest Lap</option>
+                                <option value="tOnD">Time on Distance for Fastest Lap</option>
+                            </select>
+                            <br>
+                            <br>
+                            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                                {% for driver in listOfDriver %}
+                                    <label><input class="uk-checkbox" name="driver" type="checkbox" value="{{ driver }}">{{ driver }}</label>
+                                    <br>
+                                {% endfor %}
+                            </div>
+                            <br>
+                            <br>
+                            <button class="uk-button uk-button-default uk-light">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
