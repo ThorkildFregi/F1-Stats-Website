@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="uk-background-secondary">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/css/uikit.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit-icons.min.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    </head>
+    <body>
+        <div class="uk-container uk-align-center uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
+            <div>
+                <h1 class="uk-text-center uk-light">Home</h1>
+                <br>
+                <form action="{{ url_for('chooseRound') }}" method="post" class="form_inline" enctype='multipart/form-data'>
+                    <div class=" uk-container uk-align-center uk-flex uk-flex-center uk-flex-middle">
+                        <div class="uk-light">
+                            <select class="uk-select" aria-label="Select" id="year" name="year">
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                            </select>
+                            <br>
+                            <br>
+                            <button class="uk-button uk-button-default uk-light">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
