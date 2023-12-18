@@ -4,7 +4,7 @@
 
 **Presentation**
 
-F1 stats website is use to create graphics of pilot best laps (for the moment). The actual version is V1
+F1 stats website is use to create graphics of pilot best laps (for the moment).
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
